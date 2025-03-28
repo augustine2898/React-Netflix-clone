@@ -1,0 +1,152 @@
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.banner-img {
+    width: 100%;
+    object-fit: cover;
+    mask-image: linear-gradient(to right, transparent, black 75%);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 75%);
+}
+
+.hero-caption {
+    position: absolute;
+    width: 100%;
+    padding-left: 5vw;
+    bottom: 5%;
+}
+
+.title-cards-container {
+    padding-top: 20px;
+}
+
+
+
+.hero-caption p {
+    max-width: 700px;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.hero-btns {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 3rem;
+}
+
+.hero-btns .btn {
+    border: none;
+    padding: 0.5rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    background: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.hero-btns .btn img {
+    width: 20px;
+}
+
+.hero-btns .btn.dark-btn {
+    color: #fff;
+    background: rgba(109, 109, 110, 0.7);
+}
+
+.hero-btns .btn:hover {
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
+.hero-btns .btn.dark-btn:hover {
+    background: rgba(109, 109, 110, 0.4);
+}
+
+.more-cards {
+    padding-left: 3%;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .hero-caption .title-cards {
+        display: none;
+    }
+    .hero-btns {
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 800px) {
+    .hero-caption {
+        padding-left: 4vw;
+    }
+    .caption-img {
+        margin-bottom: 1rem;
+        width: 40%;
+    }
+    .hero-caption p {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
+    .hero-btns .btn img {
+        width: 18px;
+    }
+    .more-cards {
+        padding-left: 4vw;
+    }
+}
+
+@media (max-width: 500px) {
+    .hero-caption {
+        bottom: 3%;
+        text-align: center;
+        padding-left: 0;
+    }
+    .caption-img {
+        display: none;
+    }
+    .hero-caption p {
+        font-size: 0.85rem;
+        margin-bottom: 0.75rem;
+    }
+    .hero-btns {
+        justify-content: center;
+        gap: 5px;
+    }
+    .hero-btns .btn {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+    .hero-btns .btn img {
+        width: 15px;
+    }
+}
+
+@media (max-width: 375px) {
+    .hero-caption {
+        bottom: 2%;
+    }
+    .hero-caption p {
+        font-size: 0.75rem;
+    }
+    .hero-btns .btn {
+        padding: 5px 10px;
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 320px) {
+    .hero-caption {
+        bottom: 1%;
+    }
+    .hero-caption p {
+        font-size: 0.7rem;
+    }
+    .hero-btns .btn {
+        padding: 4px 8px;
+        font-size: 0.7rem;
+    }
+}

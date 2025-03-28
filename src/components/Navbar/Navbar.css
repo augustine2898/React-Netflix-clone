@@ -1,0 +1,127 @@
+.navbar {
+    width: 100%;
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-size: 14px;
+    color: #e5e5e5;
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 10%, transparent);
+    z-index: 10;
+}
+
+/* Left Section */
+.navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.navbar-left img {
+    width: 80px;
+    height: auto;
+}
+
+
+.navbar-left ul {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+}
+
+.navbar-left ul li {
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* Right Section */
+.navbar-right {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.navbar-right .icons {
+    width: 18px;
+    cursor: pointer;
+}
+
+.navbar-right .profile {
+    width: 30px;
+    border-radius: 4px;
+}
+
+/* Profile Dropdown */
+.navbar-profile {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    position: relative;
+}
+
+.navbar .dropdown {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    width: max-content;
+    background: #191919;
+    padding: 12px 18px;
+    border-radius: 4px;
+    text-decoration: underline;
+    z-index: 100;
+    display: none;
+}
+
+.navbar-profile:hover .dropdown {
+    display: block;
+}
+
+/* Dark Navbar on Scroll */
+.nav-dark {
+    background: #141414;
+}
+
+/* 📌 Responsive Fixes */
+@media (max-width: 800px) {
+    .navbar {
+        padding: 12px 4%;
+    }
+
+    .navbar-left ul {
+        display: none;
+    }
+
+    .navbar img {
+        height: 22px;
+    }
+}
+
+@media (max-width: 500px) {
+    .navbar {
+        padding: 10px 3%;
+    }
+
+    .navbar-left img {
+        width: 70px;
+    }
+
+    .navbar-right {
+        gap: 8px;
+    }
+
+    .navbar-right p {
+        display: none; /* Hide 'Children' text */
+    }
+
+    .navbar-right .profile {
+        width: 28px;
+    }
+
+    .navbar-profile img {
+        width: 15px; /* Reduce dropdown icon size */
+    }
+}
