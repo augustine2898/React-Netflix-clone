@@ -1,26 +1,55 @@
-import React, { useState } from 'react'
+import React, { useState ,useContext} from 'react'
 import logo from '../../../assets/logo.png';
 import './Login.css'
 import{login,signup} from '../../../firebase';
 import netflix_spinner from '../../../assets/netflix_spinner.gif'
+
+import { GlobalContext } from '../../../context/GlobalContext';
+import { useNavigate } from 'react-router-dom';
+
 const Login = () => {
 
-  const [signState,setSignState]=useState("Sign In")
-  const [name,setName]=useState("")
-  const [email,setEmail]=useState("")
-  const [password,setPassword]=useState("");
-  const [loading,setLoding]=useState(false);
+  
+  // const [signState,setSignState]=useState("Sign In")
+  // const [name,setName]=useState("")
+  // const [email,setEmail]=useState("")
+  // const [password,setPassword]=useState("");
+  // const [loading,setLoding]=useState(false);
 
-  const user_auth=async(event)=>{
-    event.preventDefault();
-    setLoding(true);
-    if(signState==="Sign In"){
-      await login(email,password);
-    }else{
-      await signup(name,email,password);
-    }
-    setLoding(false);
+  // const user_auth=async(event)=>{
+  //   event.preventDefault();
+  //   setLoding(true);
+  //   if(signState==="Sign In"){
+  //     await login(email,password);
+  //   }else{
+  //     await signup(name,email,password);
+  //   }
+  //   setLoding(false);
+  // }
+
+  const { user } = useContext(GlobalContext);
+  const navigate = useNavigate();
+  const [signState, setSignState] = useState("Sign In");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  if (user) {
+    navigate('/');
+    return null;
   }
+
+  const user_auth = async (event) => {
+    event.preventDefault();
+    setLoading(true);
+    if (signState === "Sign In") {
+      await login(email, password);
+    } else {
+      await signup(name, email, password);
+    }
+    setLoading(false);
+  };
 
   return (
     loading?<div className='login-spinner'>

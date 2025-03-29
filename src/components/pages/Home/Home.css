@@ -1,6 +1,7 @@
 .hero {
     position: relative;
     overflow: hidden;
+    padding-top: 0px
 }
 
 .banner-img {
@@ -14,19 +15,25 @@
     position: absolute;
     width: 100%;
     padding-left: 5vw;
-    bottom: 5%;
+    bottom: 10%;
+    /* z-index: 10; */
 }
 
 .title-cards-container {
     padding-top: 20px;
 }
 
-
+.hero-caption h1{
+    font-size: 3rem;
+    font-weight: 800;
+    padding-bottom: 0.3rem;
+}
 
 .hero-caption p {
     max-width: 700px;
     font-size: 1rem;
     margin-bottom: 1.5rem;
+    height: 100%;
 }
 
 .hero-btns {
@@ -47,6 +54,9 @@
     border-radius: 4px;
     cursor: pointer;
 }
+
+
+
 
 .hero-btns .btn img {
     width: 20px;
@@ -69,6 +79,17 @@
     padding-left: 3%;
 }
 
+.title-cards-top{
+
+    /* margin-top : 25%; */
+    position: relative;
+    bottom: -80px;
+    
+    /* margin-top:  200px !important; */
+}
+
+
+
 /* Responsive Styles */
 @media (max-width: 1024px) {
     .hero-caption .title-cards {
@@ -77,6 +98,13 @@
     .hero-btns {
         margin-bottom: 2rem;
     }
+    .hero-caption h1 {
+        font-size: 2.5rem;
+    }
+    .hero-caption p {
+        font-size: 0.95rem;
+    }
+
 }
 
 @media (max-width: 800px) {
@@ -87,9 +115,11 @@
         margin-bottom: 1rem;
         width: 40%;
     }
+    .hero-caption h1 {
+        font-size: 2rem;
+    }
     .hero-caption p {
         font-size: 0.9rem;
-        margin-bottom: 1rem;
     }
     .hero-btns .btn img {
         width: 18px;
@@ -108,10 +138,13 @@
     .caption-img {
         display: none;
     }
+    .hero-caption h1 {
+        font-size: 1rem;
+    }
     .hero-caption p {
         font-size: 0.85rem;
-        margin-bottom: 0.75rem;
     }
+    
     .hero-btns {
         justify-content: center;
         gap: 5px;
@@ -129,6 +162,9 @@
     .hero-caption {
         bottom: 2%;
     }
+    .hero-caption h1 {
+        font-size: 1.3rem;
+    }
     .hero-caption p {
         font-size: 0.75rem;
     }
@@ -140,7 +176,10 @@
 
 @media (max-width: 320px) {
     .hero-caption {
-        bottom: 1%;
+        bottom: -11%;
+    }
+    .hero-caption h1 {
+        font-size: 1.1rem;
     }
     .hero-caption p {
         font-size: 0.7rem;

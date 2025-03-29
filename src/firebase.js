@@ -46,8 +46,16 @@ const login =async(email,password)=>{
     }
 }
 
-const logout =()=>{
-    signOut(auth)
-}
+const logout = async () => {
+  try {
+      console.log("Firebase signOut called");  // Debugging line
+      await signOut(auth);
+      console.log("User successfully signed out");
+      setUser(null); 
+  } catch (error) {
+      console.error("Logout error:", error.message);
+  }
+};
+
 
 export {auth,db,login,signup,logout}

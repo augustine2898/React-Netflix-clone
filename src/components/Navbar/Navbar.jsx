@@ -1,15 +1,17 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useContext, useEffect, useRef } from 'react'
 import './Navbar.css'
 import logo from '../../assets/logo.png';
 import search_icon from '../../assets/search_icon.svg'
 import bell_icon from '../../assets/bell_icon.svg'
 import profile_img from '../../assets/profile_img.png'
 import caret_icon from '../../assets/caret_icon.svg'
-import { logout } from '../../firebase';
+// import { logout } from '../../firebase';
+import { GlobalContext } from '../../context/GlobalContext';
 
 
 const Navbar=()=> {
-    const navRef =useRef()
+    const navRef =useRef();
+    const{user,logout}=useContext(GlobalContext)
     useEffect(() => {
         const handleScroll = () => {
             if (navRef.current) { 
@@ -50,26 +52,7 @@ const Navbar=()=> {
                     <img src={profile_img} alt='' className='profile' />
                     <img src={caret_icon} alt='' />
                     <div className="dropdown">
-                        {/* <div class="dropdown-item">
-                            <img src="" alt="" />
-                            <p>Manage Profiles</p>
-                        </div>
-                        <div class="dropdown-item">
-                            <img src="" alt="" />
-                            <p>Transfer Profile</p>
-                        </div>
-                        <div class="dropdown-item">
-                            <img src="" alt="" />
-                            <p>Account</p>
-                        </div>
-                        <div class="dropdown-item">
-                            <img src="" alt="" />
-                            <p>Help Centre</p>
-                        </div>
-                        <hr />
-                        <div class="dropdown-item signout"> */}
-                        <p onClick={()=>{logout()}}>Sign out of Netflix</p>
-
+                    <p onClick={() => logout()}>Sign out of Netflix</p>
                     </div>
                 </div>
             </div>
@@ -78,3 +61,5 @@ const Navbar=()=> {
 }
 
 export default Navbar
+
+
